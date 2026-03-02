@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative '../lib/bulk_replace'
+
+begin
+  BulkReplace::CLI.new(ARGV).run
+rescue StandardError => e
+  warn e.message
+  exit 1
+end

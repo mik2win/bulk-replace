@@ -1,0 +1,26 @@
+# bulk-replace configuration template
+#
+# List every substitution you need under `replacements`.
+# Each entry requires exactly two keys:
+#   from: the exact text to find (case-sensitive, literal string)
+#   to:   the text to write in its place
+#
+# Usage:
+#   bulk-replace --config replacements.yml --input ./configs --output ./configs-new
+
+replacements:
+  # --- WireGuard: inject a private key ---
+  - from: "PrivateKey = PLACEHOLDER"
+    to: "PrivateKey = wOEI9rqqbDwnN8/Bpp/ZkEMEKlMDxVMB8PJHA0XXXXXXX="
+
+  # --- WireGuard: change the DNS server ---
+  - from: "DNS = 8.8.8.8"
+    to: "DNS = 1.1.1.1"
+
+  # --- WireGuard: update the endpoint address ---
+  - from: "Endpoint = 203.0.113.1:51820"
+    to: "Endpoint = 203.0.113.99:51820"
+
+  # --- Generic example: swap a hostname ---
+  - from: "old-server.example.com"
+    to: "new-server.example.com"
