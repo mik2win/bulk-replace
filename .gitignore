@@ -1,2 +1,8 @@
 CLAUDE.md
 .cursor
+.claude
+/testin
+/testout
+replacements.yml
+*.gem
+.DS_Store
